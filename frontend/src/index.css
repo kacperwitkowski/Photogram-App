@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.main {
+  @apply pt-16;
+}
+
+.menu {
+  @apply w-full sm:pt-16 sm:w-64 bg-transparent sm:bg-white text-white sm:text-black fixed bottom-0 z-50 sm:z-0 sm:inset-y-0 overflow-x-hidden overflow-y-auto sm:block;
+}
+
+.gray {
+  @apply text-gray-600;
+}
+
+.icon {
+  @apply mb-4 text-4xl text-[#3182ce];
+}
+
+.notification__span {
+  @apply absolute w-4 text-xs h-5 flex items-center justify-center rounded-lg;
+}
+
+.follow__buttons {
+  @apply px-3 py-2 m-2 rounded-md font-semibold;
+}
+
+.profile__button {
+  @apply bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150
+}
+
+.dropdown {
+  @apply hidden;
+}
+
+.navbar-message:hover > .dropdown {
+  display: flex;
+  color: white;
+  text-decoration: none;
+}
+
+.notification__list__desktop {
+  @apply flex-col top-[64px] w-[17.625rem] bg-[#29303b] absolute justify-start
+  left-1/2 -translate-x-1/2;
+}
+.notification__list__mobile {
+  @apply top-[64px] w-full;
+}
+.notification__element {
+  @apply border-l-8 p-2 flex list-none text-center cursor-pointer items-center text-sm;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(136, 136, 136, 0.281);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+::-webkit-scrollbar {
+  display: none; /* Hide the scrollbar on Webkit based browsers (Chrome, Safari, etc) */
+  -webkit-overflow-scrolling: touch; /* On touch screens the content continues to scroll for a while after finishing the scroll gesture */
+}
