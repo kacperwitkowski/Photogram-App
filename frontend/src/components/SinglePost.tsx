@@ -340,14 +340,14 @@ const SinglePost = (props: { posts: PostsProps[] }) => {
                 <div className="flex flex-col xs:flex-row items-baseline">
                   <Link
                     to={`/profile/${el.postedBy._id}`}
-                    className="pt-3 mx-3 font-semibold"
+                    className="pt-3 ml-3 font-semibold"
                   >
                     {el.postedBy.name}
                   </Link>
                   <p>{el.desc}</p>
                 </div>
                 {el.hashtags.length >= 1 && !el.hashtags.includes("") ? (
-                  <p className="text-blue-400 px-3 py-1">
+                  <p className="text-blue-400 px-3 py-1 ml-3">
                     {el.hashtags.map((el: string) => (
                       <span
                         className="cursor-pointer"

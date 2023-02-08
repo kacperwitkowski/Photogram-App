@@ -61,12 +61,14 @@ const Discover: React.FC = () => {
                   }`}
                 >
                   {el.icon}
-                  {!user && el.name !== "all" && (
-                    <AiFillLock
-                      title={el.name}
-                      className="w-4 h-4 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[#EC5252]"
-                    />
-                  )}
+                  {!user &&
+                    Object.entries(user).length === 0 &&
+                    el.name !== "all" && (
+                      <AiFillLock
+                        title={el.name}
+                        className="w-4 h-4 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[#EC5252]"
+                      />
+                    )}
                 </span>
               </div>
             </Link>
@@ -218,12 +220,14 @@ const Discover: React.FC = () => {
                   }`}
                 >
                   {el.icon}
-                  {!user && el.name !== "all" && (
-                    <AiFillLock
-                      title={el.name}
-                      className="w-4 h-4 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[#EC5252]"
-                    />
-                  )}
+                  {!user &&
+                    Object.entries(user).length === 0 &&
+                    el.name !== "all" && (
+                      <AiFillLock
+                        title={el.name}
+                        className="w-4 h-4 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[#EC5252]"
+                      />
+                    )}
                 </span>
               </div>
             </Link>
@@ -307,7 +311,9 @@ const Discover: React.FC = () => {
               setOpenMore(!openMore);
             }}
           />
-          {user && <Notification type="desktop" />}
+          {user && Object.entries(user).length !== 0 && (
+            <Notification type="desktop" />
+          )}
         </div>
         <div className="block sm:hidden">
           {user && Object.entries(user).length !== 0 ? (

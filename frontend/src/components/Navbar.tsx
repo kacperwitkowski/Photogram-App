@@ -26,7 +26,7 @@ const Navbar: React.FC = () => {
       }`}
     >
       <div className="relative flex h-full w-full items-center justify-center">
-        {user && (
+        {user && Object.entries(user).length !== 0 && (
           <div className="sm:hidden absolute left-3">
             {" "}
             <Link to={"/messages"}>
