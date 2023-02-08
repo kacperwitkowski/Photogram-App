@@ -1,6 +1,5 @@
-import Message from "../models/MessageSchema.js";
+import Message from "../models/messageSchema.js";
 import User from "../models/userSchema.js";
-import Conversation from "../models/conversationSchema.js";
 import mongoose from "mongoose";
 
 export const newMessage = async (req, res, next) => {
