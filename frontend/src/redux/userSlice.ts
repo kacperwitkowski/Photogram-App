@@ -8,7 +8,7 @@ export interface CounterState {
 }
 
 const initialState: CounterState = {
-  user: {},
+  user: null,
   selectedConv: {},
   loading: false,
   error: false,

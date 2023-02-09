@@ -61,15 +61,11 @@ const Discover: React.FC = () => {
                   }`}
                 >
                   {el.icon}
-                  {(!user && el.name !== "all") ||
-                  typeof user === "string" ||
-                  typeof user === "undefined" ? (
+                  {!user && el.name !== "all" && (
                     <AiFillLock
                       title={el.name}
                       className="w-4 h-4 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[#EC5252]"
                     />
-                  ) : (
-                    ""
                   )}
                 </span>
               </div>
@@ -222,13 +218,11 @@ const Discover: React.FC = () => {
                   }`}
                 >
                   {el.icon}
-                  {!user && el.name !== "all" ? (
+                  {!user && el.name !== "all" && (
                     <AiFillLock
                       title={el.name}
                       className="w-4 h-4 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[#EC5252]"
                     />
-                  ) : (
-                    ""
                   )}
                 </span>
               </div>
