@@ -271,7 +271,7 @@ const SinglePost = (props: { posts: PostsProps[] }) => {
                           </EmailShareButton>
                         </div>
                       </div>
-                      {el.postedBy._id === user._id && (
+                      {el.postedBy._id === user?._id && (
                         <AiFillDelete
                           title="Delete post"
                           onClick={() => {

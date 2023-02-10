@@ -16,7 +16,7 @@ const Home = ({ type }: { type?: string }) => {
   const location = useLocation();
   const { user } = useSelector((state: RootState) => state);
   const dispatch = useDispatch();
-  
+
   useEffect(() => {
     const getUserData = async () => {
       try {
@@ -98,10 +98,12 @@ const Home = ({ type }: { type?: string }) => {
         }
       }
 
-      if (location.pathname === "/") {
+      if (location.pathname === "/" && user) {
         setSpinner(true);
         handleGetFollowersPosts();
         setSpinner(false);
+      } else if (location.pathname === "/" && !user) {
+        return "";
       }
     };
 

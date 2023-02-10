@@ -114,7 +114,6 @@ const UserProfile = ({ type }: { type: string }) => {
     const getMyData = async () => {
       try {
         const { data } = await axios.get(`/users/profile/${user?._id}`);
-        console.log(data);
         dispatch(updateUserData(data[0]));
         setUserData(data[0]);
         setPrivateAccount(data[0].privateAccount);
@@ -123,12 +122,12 @@ const UserProfile = ({ type }: { type: string }) => {
       }
     };
 
-    if (user._id !== location.pathname.split("/")[2]) {
+    if (user?._id !== location.pathname.split("/")[2]) {
       getOtherUserData();
     } else {
       getMyData();
     }
-  }, [location.pathname, followChange, user._id, privateAccount, dispatch]);
+  }, [location.pathname, followChange, user?._id, privateAccount, dispatch]);
 
   const handleAcceptFRequest = async (id: string) => {
     const { data } = await axios.put(
